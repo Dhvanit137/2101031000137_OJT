@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_Details</title>
+</head>
+<body>
+    select product : <select id="product">
+        <option value=""></option>
+        <option value="45000">AC</option>
+        <option value="25000">TV</option>
+        <option value="30000">Refrigrator</option>
+        <option value="59999">leptop</option>
+    </select>
+    <br>
+    <br>
+    Net price : <input type="text" id="Price">
+    <br>
+    <br>
+    Quntity : <input type="text" id="Quntity">
+    <br>
+    <br>
+    Total price : <input type="text" id="amount">
+    GST : <input type = "text" id = "GST" >
+    <script>
+    
+        var product = document.getElementById('product');
+        var Quntity = document.getElementById('Quntity');
+        var amount = document.getElementById('amount');
+        var Price = document.getElementById('Price');
+        var GST = document.getElementById('GST');
+        product.addEventListener("change",()=>{
+            Price.value = product.value;
+        });
+        amount.addEventListener("focus",()=>{
+            amount.value = Quntity.value * Price.value*GST.value;
+        });
+    </script>
+    
+</body>
+</html>
